@@ -1,0 +1,184 @@
+.companion {
+  width: 100%;
+  background: #191919;
+  padding: 160px 40px;
+  padding:clamp(80px, 10vw - 50px, 160px) clamp(20px, 5vw, 40px);
+  position: relative;
+}
+
+/* -------- TITLE -------- */
+
+.companion-title {
+
+
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+ .companion-title > div:first-child {
+margin-left: 80px;}
+
+
+.companion-title-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-label {
+  align-self: flex-start;
+  padding-top: 20px;
+  /* width: 85.333px;
+height: 32px; */
+/* width: clamp(55px,calc(85.333 / 1600 * 100vw),85.333px);
+height: clamp(20px,calc(32 / 1600 * 100vw),32px); */
+}
+
+.title-smart {
+    align-self: self-start;
+        /* Typography */
+  text-align: center;
+    font-family: 'HeadingNowTrial', sans-serif;
+font-size: clamp(170px,calc(304 / 1600 * 100vw) ,304px);
+font-size: clamp(170px,calc(25vw + 96px) ,304px);
+
+font-size: clamp(170px, calc(30vw - 176px), 304px);
+/* font-size: clamp(170px, calc(35vw - 256px), 304px); */
+/* font-size: clamp(170px, calc(40vw - 336px), 304px); */
+
+
+
+font-style: normal;
+font-weight: 800;
+line-height: calc(256/304); /* 84.211%  256px*/
+text-transform: uppercase;
+  /* Gradient Text */
+  background: linear-gradient(to bottom, #f1f1f1 55%, #8f8f8f 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-right: 25px;
+  margin-left: 10px;
+  position: relative;
+}
+
+.title-circular-badge {
+/* Typography */
+  color: #FFF;
+font-family: 'Oswald', sans-serif;
+font-size: clamp(14px,calc(27.3 / 1600 * 100vw),27.3px);
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+width: 200px;
+height: 200px;
+border-radius: 50%;
+  text-align: center;
+}
+
+.title-yellow-icon {
+  position: absolute;
+  left: calc(50% - 260px);
+  left: -10%;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  bottom: -18px;
+  width: clamp(50px,calc(76 / 1600 * 100vw),76px);
+  height: clamp(50px,calc(76 / 1600 * 100vw),76px);
+  background-color: #FFCC66;
+  border-radius: 20px;
+  transform: rotate(-19deg);
+  padding: 5px;
+  /* padding: 5px; */
+  z-index: 5;
+}
+.title-yellow-icon img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.title-companion {
+    /* Typography */
+  text-align: center;
+    font-family: 'HeadingNowTrial', sans-serif;
+font-size: clamp(170px,calc(304 / 1600 * 100vw),304px);
+/* font-size: clamp(170px, calc(35vw - 256px), 304px); */
+font-size: clamp(170px, calc(30vw - 176px), 304px);
+
+/* font-size: clamp(170px, calc(40vw - 336px), 304px); */
+/* font-size: clamp(170px,calc(25vw + 96px) ,304px); */
+
+
+
+font-style: normal;
+font-weight: 800;
+line-height: calc(256/304); /* 84.211%  256px*/
+text-transform: uppercase;
+  /* Gradient Text */
+  background: linear-gradient(to bottom, #818181 55%, #1c1c1c 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+
+
+
+
+
+/* -------- CONTENT -------- */
+
+.companion-content {
+    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 80px;
+  gap: clamp(40px, calc(10vw - 80px), 80px);
+  position: relative;
+  z-index: 5;
+}
+.cards-left,
+.cards-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.phone-wrapper {
+    /* width: 340px; */
+  /* height: auto; */
+  display: flex;
+  position: relative;
+    top: -60px;
+    height: clamp(400px, calc(812 / 1600 * 100vw), 812px);
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.phone {
+  width: 100%;
+  height: auto;
+  transition: 0.4s ease;
+  transform: translateY(0);
+}
+
+/* .companion img {
+  animation: fadeIn 0.3s ease;
+} */
+
+/* @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} */

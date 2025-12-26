@@ -1,0 +1,106 @@
+.experts {
+    padding: clamp(80px, 10vw, 160px) clamp(20px, 5vw, 40px);
+
+background: #191919;  
+  color: #f8f8f8;
+  min-height: 90vh;
+}
+
+.experts__header {
+  /* max-width: 1100px;
+  margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.experts__eyebrow {
+  color: #FFF;
+font-family: HeadingNow-74Regular;
+font-size: 18px;
+font-size: clamp(14px, 1.3vw, 18px);
+font-style: normal;
+font-weight: 400;
+line-height: calc(24 / 18); /* 133.333% */
+letter-spacing: -0.4px;
+text-transform: uppercase;
+}
+
+.experts__title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: "HeadingNowTrial", sans-serif;
+  color: #FFF;
+font-size: 208px;
+font-size: clamp(100px, calc(18vw - 80px), 208px);
+font-style: normal;
+font-weight: 800;
+line-height: calc(184 / 208 ); /* 88.462% */
+text-transform: uppercase;
+}
+
+.experts__lede {
+  max-width: 720px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "HeadingNow-73Book", sans-serif;
+  font-size: clamp(14px, 1.3vw, 18px);
+  line-height: 1.5;
+}
+
+.experts__grid {
+  height: clamp(300px, calc(564 / 1600 * 100vw), 564px);
+  margin: clamp(32px, 8vw, 64px) auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(14px,calc(16 / 1600 * 100vw),16px) ;
+}
+
+.experts__grid {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.experts__grid article:nth-child(2) {
+height: 90%;}
+.experts__grid article:nth-child(3) {
+  height: 80%;
+}
+
+@media (max-width: 900px) {
+  .experts__title {
+    font-size: clamp(48px, 14vw, 86px);
+  }
+}
+
+@media (max-width: 600px) {
+  .experts {
+    padding: clamp(56px, 14vw, 92px) 18px;
+  }
+
+  .experts__grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+
+
+
+@media (max-height: 820px) {
+  .experts__grid {
+    /* min-height: auto; */
+      height: clamp(300px, calc(100vh - 286px), 564px);
+
+  }
+
+    .experts__grid article:nth-child(2) {
+      height: auto;
+height: 90%;}
+.experts__grid article:nth-child(3) {
+  height: auto;
+  height: 80%;
+}
+
+
+}
+
+
+  

@@ -1,0 +1,68 @@
+/* Container for the circular text */
+.circle-container {
+    align-self: center;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  color: #f1f1f1;
+  pointer-events: none;
+  /* Responsive diameter with optional override from prop.
+     Aim: ~200px at 1600px viewport, shrink toward 120px on smaller screens. */
+  --circle-size: clamp(110px, calc(20vw - 120px), 200px);
+    /* --circle-size: clamp(110px, calc(200 / 1600 * 100vw), 200px);
+      --circle-size: clamp(110px, calc(15vw - 40px), 200px);
+            --circle-size: clamp(110px, calc(18vw - 88px), 200px); */
+
+
+
+  width: var(--circle-size);
+  height: var(--circle-size);
+}
+
+.circle-text {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circle-center {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.circle-center svg {
+  width: clamp(32px, calc(4vw - 20px), 44px);
+  height: auto;
+  display: block;
+}
+
+.char {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 0 0;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 2px;
+ 
+  font-size: clamp(14px,calc(3vw - 20.7px),27.3px);
+  letter-spacing: clamp(1px, 0.2vw, 2px);
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+
+.spin {
+  animation: spin 14s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

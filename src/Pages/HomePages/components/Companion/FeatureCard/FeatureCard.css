@@ -1,0 +1,73 @@
+.feature-card {
+  /* 428,216*/
+  width: clamp(260px, calc(508 / 1600 * 100vw), 508px);
+  /* height: clamp(180px,calc(296 / 1600 * 100vw),296px); */
+  height: auto;
+  padding: 40px;
+  border-radius: 24px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  padding: clamp(20px, 3vw, 40px);
+  padding: clamp(10px, calc(5vw - 40px), 40px);
+
+  gap: clamp(10px, 1vw, 16px);
+  border-radius: clamp(16px, 3vw, 24px);
+}
+
+.feature-card.active {
+  background: #242424;
+  /* border-top-right-radius: 148px; */
+  border-top-right-radius: clamp(80px, calc(12vw - 44px), 148px); /* for active state */
+}
+
+.feature-card-subtitle {
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: HeadingNow-74Regular;
+  font-size: clamp(14px, calc(18 / 1600 * 100vw), 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 18); /* 133.333% */
+  text-transform: uppercase;
+  align-self: stretch;
+}
+
+.feature-card-title {
+  /* width: 100%; */
+
+  /* Heading Now 46 Bold */
+  font-family: "HeadingNowTrial", sans-serif;
+  font-size: 44px;
+  font-size: clamp(18px, calc(44 / 1600 * 100vw), 44px);
+  /* font-size: clamp(18px,calc(5vw - 36px),44px); */
+  font-size: clamp(18px, calc(4vw - 20px), 44px);
+  font-size: clamp(18px, 3vw, 44px);
+  font-size: clamp(18px, calc(5vw - 36px), 44px);
+
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+  align-self: stretch;
+}
+
+.feature-card-text {
+  color: rgba(255, 255, 255, 0.5);
+  /* Use HeadingNow-73Book (now added to assets) */
+  font-family: "HeadingNow-73Book", sans-serif;
+  /* font-size: 16px; */
+  font-size: clamp(14px, calc(6vw - 9.6px), 16px);
+    font-size: clamp(14px, calc(16 / 1600 * 100vw), 16px);
+
+  font-style: normal;
+  font-weight: 300;
+  line-height: calc(24 / 16); /* 150% */
+  letter-spacing: calc(-0.4 / 1600 * 100vw);
+  align-self: stretch;
+}

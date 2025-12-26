@@ -1,0 +1,175 @@
+.experts-card {
+  position: relative;
+  padding: clamp(14px, calc(24 / 1600 * 100vw), 24px);
+  border-radius: 24px;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.04),
+    #ffffff05
+  );
+ 
+background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 65.16%, #000 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 14px;
+  min-height: 300px;
+  isolation: isolate;
+  transition: transform 200ms ease, border-color 200ms ease,
+    box-shadow 200ms ease;
+    ;
+}
+
+.experts-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 20% 15%,
+    rgba(var(--card-accent, 255, 255, 255), 0.14),
+    transparent 42%
+  );
+  z-index: 1;
+}
+
+.experts-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(var(--card-accent, 255, 255, 255), 0.35);
+  box-shadow: 0 24px 70px rgba(var(--card-accent, 255, 255, 255), 0.16);
+}
+
+.experts-card__video,
+.experts-card__placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.experts-card__video {
+  filter: saturate(1.05) contrast(1.08);
+  /* transform: scale(1.02); */
+}
+
+.experts-card__placeholder {
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "HeadingNowTrial", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.04) 12px,
+      rgba(255, 255, 255, 0.02) 12px,
+      rgba(255, 255, 255, 0.02) 24px
+    ),
+    linear-gradient(
+      160deg,
+      rgba(var(--card-accent, 255, 255, 255), 0.24),
+      rgba(0, 0, 0, 0.35)
+    );
+    background: #292929;
+}
+
+.experts-card__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  mix-blend-mode: multiply;
+  z-index: 2;
+}
+
+.experts-card__content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2vw, 18px);
+  min-height: 100%;
+  /* flex: 1 1 auto; */
+}
+
+.experts-card__overline {
+  position: relative;
+  font-family: "HeadingNow-73Book", sans-serif;
+  color: rgba(255, 255, 255, 0.60);
+font-size: clamp(12px, calc(14 / 1600 * 100vw), 14px);
+font-style: normal;
+font-weight: 300;
+line-height: calc(20 / 14); /* 142.857% */
+letter-spacing: -0.4px;
+text-transform: uppercase;
+}
+
+.experts-card__footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.experts-card__title {
+  max-width: 90%;
+
+  font-family: "HeadingNowTrial", sans-serif;
+  color: #fff;
+  font-size: 36px;
+  font-size: clamp(18px, calc(36 / 1600 * 100vw),36px);
+  font-style: normal;
+  font-weight: 700;
+  line-height: calc(36 / 36); /* 100% */
+  text-transform: uppercase;
+}
+
+.experts-card__duration {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(var(--card-accent, 255, 255, 255), 0.5);
+  color: #ffffff;
+  font-family: "HeadingNow-73Book", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 900px) {
+  .experts-card {
+    /* min-height: 320px; */
+  }
+}
+
+@media (max-width: 600px) {
+  .experts-card {
+    padding: clamp(14px, 3vw, 18px);
+  }
+
+  .experts-card__footer {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .experts-card__title {
+    max-width: 100%;
+  }
+
+  .experts-card__duration {
+    align-self: flex-start;
+  }
+}

@@ -1,0 +1,66 @@
+.keep-track {
+  width: 100%;
+  background-color: #ffcc66;
+  position: relative;
+  /* height: 400vh; */
+}
+
+.keeptrack-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  background: #ffcc66;
+  /* padding-top: 400px; */
+  display: flex;
+flex-direction: column;
+justify-content: center;  overflow: hidden;
+    /* display: grid;
+  place-items: center; ✔ QƏHRƏMAN SƏTİR */
+}
+
+.keep-track-scroll {  
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  gap: 15px;
+
+  color: #191919;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(100px, calc(200 / 1600 * 100vw), 200px);
+
+  font-style: normal;
+  font-weight: 700;
+  line-height: calc(256 / 304); /* 84.211% bu faiz lineheight/fontsize*100% */
+  text-transform: uppercase;
+  white-space: nowrap;
+  /* overflow-x: auto;
+  overflow-y: hidden; */
+
+  /* transform: translateX(0); */
+  will-change: transform;
+  /* padding: 5px; */
+   padding-left: 40px;
+
+}
+
+.keep-track-scroll > img {
+  height: clamp(120px, calc(200 / 1600 * 100vw), 200px);
+  /* width: auto; */
+}
+.keep-track-text {
+ 
+  color: rgba(25, 25, 25, 0.6);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, sans-serif;
+  /* font-size: clamp(12px, calc(18 / 1600 * 100vw), 18px); */
+  
+  font-style: normal;
+  font-weight: 300;
+  line-height: 24px; /* 150% */
+  letter-spacing: -0.4px;
+  /* width: clamp(130px, calc(350 / 1600 * 100vw), 350px); */
+  font-size: 18px;
+  width: 344px;
+  text-align: left;
+  margin-left: 188px;
+  margin-top: 48px;
+}

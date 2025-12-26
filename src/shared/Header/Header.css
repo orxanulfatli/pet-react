@@ -1,0 +1,217 @@
+.header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  margin: 0;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+    /* max-width: 1600px; */
+
+}
+
+/*----Header Logo------*/
+.header-logo-container {
+  width: clamp(48px, 5vw, 80px);
+  height: clamp(48px, 5vw, 80px);
+  background: white;
+  border-radius: clamp(12px, 1vw, 20px);
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+}
+/* .header-logo-bg{  
+  position: absolute;
+  width: clamp(28px, 3vw, 44px);
+  height: clamp(28px, 3vw, 44px);
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+} */
+.header-logo-img {
+  width: 55%;
+  height: 70%;
+  /* object-fit: contain; */
+}
+
+/*header-menu button*/
+
+/* .header-menu-wrapper {
+  position: relative;
+  z-index: 5;
+  width: fit-content;
+} */
+
+/* .header-menu-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url('/menu-pill.svg');  yolunu düz yaz 
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;  klik mətnə düşsün 
+} */
+
+.header-menu {
+  display: flex;
+  align-items: center;
+    gap: 1.5px;
+}
+
+.header-menu a {
+     position: relative;
+    /* top | left-right | bottom | left-right */
+
+
+ padding: 
+      clamp(3px, 0.4375vw, 7px)
+  clamp(15px, 1.5vw, 24px)
+  clamp(3px, 0.5625vw, 9px)
+  clamp(15px, 1.5vw, 24px);
+
+   background: #2F2719;              /* exact */
+  backdrop-filter: blur(25px);      /* Figma glass effect */
+  -webkit-backdrop-filter: blur(25px);
+  
+  border: 2px solid #2F2719;
+  border-radius: 40px;              /* exact */
+  text-decoration: none;
+
+  color: #fff;                      /* Figma typography */
+  font-family: "HeadingNow-73Book", sans-serif;
+  font-size: clamp(8px, 1.2vw, 14px);
+  font-weight: 300;
+  line-height: 20px;
+  letter-spacing: -0.4px;
+
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.header-menu a:nth-child(1)::after,
+.header-menu a:nth-child(2)::after {
+  content: "";
+  position: absolute;
+
+  right: -5px;         /* link ilə aradakı məsafə */
+  top: 50%;
+   transform: translateY(-50%);
+
+  width: 6px;
+  height: 14px;
+  background-image: url('../../../src/assets/icons/connector.svg');   /* buraya sənin SVG yolun */
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  /*pointer-events: none; /* klik problem yaratmasın */
+}
+
+
+/* Hover effekt (Figma’ya yaxın) */
+.header-menu a:hover {
+   /* border: 1px solid #2F2719;
+     /* filter: brightness(1.05); */
+  /*opacity: 0.5;
+  /*transform: translateY(-1px);*/
+   background: #3A3223; /* içi 1 ton açıq (Figma effektinin qarşılığı) */
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.06),  /* içə doğru yumşaq highlight */
+    0 0 2px rgba(0,0,0,0.2);   
+}
+
+
+
+
+
+/*----header profile button----*/
+.b2-toggle {
+  width: clamp(48px, 5vw, 80px);
+  height: clamp(48px, 5vw, 80px);
+  background: white;
+  border-radius: clamp(12px, 1.25vw, 20px);
+
+  padding: clamp(3px, 0.5vw, 4px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1px, 0.3vw, 2px);
+
+  
+
+  flex-shrink: 0;
+
+
+  color: #000;
+text-align: center;
+font-family: HeadingNow-74Regular;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 114.286% */
+letter-spacing: -0.4px;
+}
+.toggle-item {
+  flex: 1;
+  width: 100%;
+
+  border: none;
+  outline: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(12px, 1.1vw, 14px);
+  font-weight: 600;
+  color: #000;
+
+  border-radius: clamp(10px, 1.4vw, 16px);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.toggle-item:first-child {
+  border-radius: clamp(12px, 1vw, 16px) 
+                 clamp(12px, 1vw, 16px) 
+                 4px 
+                 4px;
+}
+
+/* Alt düymə (B2B) */
+.toggle-item:last-child {
+  border-radius: 4px 
+                 4px
+                 clamp(12px, 1vw, 16px) 
+                 clamp(12px, 1vw, 16px);
+}
+.toggle-item.active {
+  background: #ffcc66 !important;
+}
+.toggle-item:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.toggle-item.active:hover {
+  background: #ffcc66 ;
+}

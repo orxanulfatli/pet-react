@@ -1,0 +1,136 @@
+.smart-care {
+  background-color: #191919;
+  width: 100%;
+  /* height: 100vh; */
+  background-color: #191919;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Content wrapper */
+.smart-care-content {
+  width: min(90%, 1200px);
+  margin: 0 auto;
+  /* position: relative; */
+}
+
+/* Small top tag */
+.smart-care-tag {
+  color: #c6c6c6;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Main Title */
+.smart-care-title {
+  text-align: center;
+  color: white;
+  position: relative;
+  margin-bottom: 80px;
+}
+
+.smart-care-title h2 {
+  font-size: 72px;
+  line-height: 0.95;
+  font-weight: 800;
+}
+
+/* HEALTH badge */
+.title-middle {
+  position: relative;
+  display: inline-block;
+}
+
+.health-badge {
+  position: absolute;
+  top: 18px;
+  right: -60px;
+  background: #4a9bff;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  transform: rotate(-10deg);
+}
+
+/* Cards column */
+/* scroll area – uzun div + sticky container */
+.smart-care-scroll-area {
+ position: relative;
+  height: calc(100vh + 100px); /* pin-spacer scroll uzunluğunu verir */
+}
+
+.smart-care-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: visible;
+
+  /* Kartlar overlap etsin deyə */
+  /* position: relative; */
+
+  /* top: 100px;
+    height: 400px;  */
+  /* height: 600px; */
+  /* width: fit-content; */
+  /* height: 100vh; */
+  /* display: flex;
+     flex-direction: column;
+    gap: 260px; */
+}
+
+.smart-care-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 64px);
+  height: 100%;
+}
+
+.smart-care-text {
+  flex: 1 1 55%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(12px, 2vw, 24px);
+}
+
+.smart-care-title {
+  font-family: "HeadingNowTrial", sans-serif;
+  font-size: clamp(170px, calc(30vw - 176px), 304px);
+  line-height: calc(256 / 304); /* 84.211% */
+
+  text-align: left;
+  color: #FFF;
+
+  font-style: normal;
+  font-weight: 800;
+  text-transform: uppercase;
+  position: relative;
+  margin: 0;
+}
+
+.smart-care-title h2 {
+
+}
+
+.smart-care-tag {
+  color: #c6c6c6;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+
+/* kartların ümumi stili */
+
+/* Kartların overlay olması üçün */
+.cards-wrapper {
+  position: relative;
+  flex: 1 1 45%;
+  height: 100%;
+}

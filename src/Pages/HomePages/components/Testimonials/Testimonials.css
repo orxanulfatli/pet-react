@@ -1,0 +1,105 @@
+.testimonials {
+  /* display: flex; */
+  padding: 160px 168px;
+  /* flex-direction: column; */
+  /* align-items: center; */
+  /* gap: 56px; */
+  /* align-self: stretch; */
+  background: #191919;
+  /* min-height: calc(100vh + 100px); */
+  width: 100%;
+}
+.testimonials-scroll-area {
+  position: relative;
+  height: calc(100vh + 100px); /* pin-spacer scroll uzunluğunu verir */
+}
+.ttestimonial-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: visible;
+}
+.testimonials-content {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  position: relative;
+}
+
+.testimonials-header__badge {
+  color: #fff;
+  text-align: center;
+  font-family: HeadingNow-74Regular;
+  font-size: clamp(14px, calc(18 / 1600 * 100vw), 18px);
+  font-style: normal;
+  font-weight: 400;
+  line-height: calc(24 / 18); /* 133.333% */
+  letter-spacing: -0.4px;
+  text-transform: uppercase;
+}
+
+.testimonials-header__title {
+  color: #fff;
+  text-align: center;
+  font-family: "HeadingNowTrial", sans-serif;
+  font-size: clamp(100px, calc(30vw - 272px), 208px);
+  font-size: clamp(120px, calc(20vw - 112px), 208px);
+
+  font-style: normal;
+  font-weight: 800;
+  line-height: calc(184 / 208); /* 88.462% */
+  text-transform: uppercase;
+}
+.testimonials-cards-wrapper {
+    position: relative;
+    --card-width: clamp(630px, 80vw, 1264px);
+    --card-height: clamp(450px, calc(var(--card-width) * 0.625), 808px);
+    width: 100%;
+    max-width: 1264px;
+    height: var(--card-height);
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+@media (max-width: 968px) {
+  .testimonials {
+    padding: clamp(80px, 10vw, 160px) clamp(20px, 5vw, 40px);
+  }
+  .testimonials-header__title {
+    font-size: clamp(70px, calc(100 / 1600 * 10vw), 100px);
+  }
+}
+
+@media (max-height: 1100px) {
+  .testimonials {
+    padding: 120px 120px;
+  }
+  .testimonials-cards-wrapper {
+    --card-height: clamp(420px, calc(var(--card-width) * 0.6), 760px);
+    height: var(--card-height);
+  }
+  .testimonial-card {
+    /* max-height: 720px;
+    min-height: 420px; */
+  }
+}
+
+@media (max-height: 900px) {
+  .testimonials {
+    padding: 80px 80px;
+  }
+  .testimonials-cards-wrapper {
+    /* --card-height: clamp(380px, calc(var(--card-width) * 0.55), 680px);
+    height: var(--card-height); */
+  }
+  .testimonial-card {
+    /* max-height: 680px;
+    min-height: 380px; */
+  }
+}
+@media (max-width: 600px) {
+  .testimonials {
+
+    padding: clamp(60px, 8vw, 80px) clamp(16px, 5vw, 20px);
+  }
+}

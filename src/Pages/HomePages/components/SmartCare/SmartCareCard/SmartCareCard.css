@@ -1,0 +1,221 @@
+.care-card {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  width: clamp(220px,calc(368/1600*100vw),368px);
+  height: auto;
+  border-radius: 40px;
+  padding: clamp(8px,calc(24/1600*100vw),16px);
+  transform: translate(-50%, -45%);
+  transition: none;
+}
+
+/* fərqli kartlar üçün arxa fon (placeholder) */
+.card-1 {
+  background: radial-gradient(circle at top, #f9e3b0, #c28d3a);
+}
+.card-2 {
+  background: radial-gradient(circle at top, #ccd5ff, #6f7cd9);
+}
+.card-3 {
+  background: radial-gradient(circle at top, #ffc7c2, #c6564d);
+}
+
+/* status bar */
+.card-status-bar {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  height: clamp(4px,calc(8/1600*100vw),8px);
+  background: rgba(25, 25, 25, 0.16);
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.card-status-segments {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  z-index: 1;
+}
+.card-status-segments span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: rgba(25, 25, 25, 0.16);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.card-status-segments span i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #111;
+  border-radius: inherit;
+  width: 0%;
+}
+
+.card-status-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: #111;
+  width: 0%;
+  z-index: -1; /* deaktiv edirik */
+}
+.card-status-shell {
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  margin-bottom: 10px;
+}
+
+/* header */
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: clamp(20px,calc(40/1600*100vw),40px);
+  border-radius: 56px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  padding: 8px 8px;
+  width: 100%;
+}
+
+.card-avatar {
+  width: 48px;
+  height: 48px;
+  /* border-radius: 50%;
+  background:#FC6;
+  border: 2pxsolid #fff;
+  color: #ffd65c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 16px;
+  fill: #FC6; */
+}
+
+.card-header-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+}
+
+.card-name {
+  color: #191919;
+  font-family: "Oswald", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px; /* 125% */
+  letter-spacing: -0.4px;
+}
+.card-name > span {
+  color: rgba(25, 25, 25, 0.6);
+}
+.card-sub {
+  color: rgba(25, 25, 25, 0.6);
+  font-family: "HeadingNow-73Book", sans-serif;
+
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 20px; /* 153.846% */
+  letter-spacing: -0.4px;
+}
+
+.card-menu {
+   width: 48px;
+  height: 48px;
+display: flex;
+justify-content: center;
+ align-items: center;
+gap: 8px;
+margin-left: auto;
+border-radius: 32px;
+background: rgba(0, 0, 0, 0.10);
+
+ }
+
+/* content */
+.card-body {
+border-radius: 24px;
+background: rgba(255, 255, 255, 0.70);
+backdrop-filter: blur(10px);
+  padding: clamp(14px,calc(24/1600*100vw),24px);
+
+  /* height: calc(100% - 70px); */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: clamp(280px,calc(576/1600*100vw),576px);
+}
+
+.card-badge {
+ color: rgba(25, 25, 25, 0.60);
+text-align: center;
+font-family: "Oswald", sans-serif;
+font-size: clamp(24px,calc(40/1600*100vw),40px);
+font-style: normal;
+font-weight: 800;
+line-height: calc(36/40); /* 90% */
+text-transform: uppercase;
+}
+
+.card-title {
+color: #714D07;
+text-align: center;
+    font-family: 'HeadingNowTrial', sans-serif;
+    font-size: clamp(30px,calc(6vw - 24px),72px);
+line-height: calc(64 / 72); /* 88.889% */
+font-style: normal;
+font-weight: 800;
+text-transform: uppercase;
+ word-wrap: break-word; /* For very long strings without spaces, like URLs */
+    overflow-wrap: break-word;
+    /* margin-bottom: clamp(70px,calc(128/1600*100vw),128px); */
+
+}
+
+.card-subtitle {
+ color: rgba(25, 25, 25, 0.60);
+font-family: "Oswald", sans-serif;
+font-family: 'HeadingNow-73Book', sans-serif;
+font-size: clamp(8px,calc(16/1600*100vw),16px);
+font-style: normal;
+font-weight: 300;
+line-height: calc(20 / 16); /* 125% */
+letter-spacing: -0.4px;
+text-transform: uppercase;
+}
+
+.card-text {
+color: #191919;
+font-family: HeadingNow-73BookItalic;
+font-size: clamp(16px,calc(24/1600*100vw),24px);
+font-style: normal;
+font-weight: 300;
+line-height: 133.33%;/* 133.333% */
+letter-spacing: -0.4px;
+}
+
+/* Temporary colors so you see them */
+.card-1 {
+  background: #e8d6a1;
+}
+.card-2 {
+  background: #afc4ff;
+}
+.card-3 {
+  background: #e68f8f;
+}

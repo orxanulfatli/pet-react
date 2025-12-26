@@ -1,0 +1,232 @@
+/* -----------------------------
+    HERO SECTION
+------------------------------*/
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* Background Video */
+.hero-video {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* Optional overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 2;
+}
+
+/* Content wrapper */
+.hero-content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: clamp(100px, 17.75vw, 284px);
+  padding-right: clamp(60px, 10.5vw, 168px);
+  padding-top: 188px;
+}
+
+/* -----------------------------
+    LEFT SIDE
+------------------------------*/
+
+.hero-left {
+  /* width: clamp(52%, 55vw, 60%);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 2vw, 20px);  */
+}
+
+.hero-logo {
+  width: clamp(32px, 5.625vw, 90px);
+  height: clamp(32px, 5.625vw, 90px);
+}
+
+.hero-title {
+  position: relative;
+  color: #fff;
+  font-family: "Oswald", sans-serif;
+
+  /* font-size: clamp(54px,9.75vw,156px); */ /*font-family headingnow tapsan bu font size qoy*/
+  font-size: clamp(54px, 6.5625vw, 105px);
+
+  font-style: normal;
+  font-weight: 800;
+  line-height: 0.88;
+  text-transform: uppercase;
+}
+.line-text {
+  margin-left: clamp(20px, 1.5625vw, 25px);
+}
+.line {
+  margin-bottom: 5px;
+}
+.line-1 {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.line-2 {
+  display: flex;
+}
+
+.hero-tag {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 0 0 10px;
+}
+.hero-tag-number {
+  font-family: "Osvald", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  font-size: clamp(12px, 1vw, 16px);
+  line-height: 24px;
+}
+
+.hero-tag-text {
+  font-family: "Osvald", sans-serif;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 300;
+  font-size: clamp(12px, 1vw, 14px);
+  line-height: 24px;
+  padding-top: 2px;
+}
+
+.line-3 {
+  margin-left: clamp(60px, 7.1875vw, 115px); /*qr olmuyanda bunu gotur*/
+
+  margin-left: clamp(75px, 8.75vw, 140px);
+  margin-left: clamp(125px, 16.4375vw, 263px);
+
+  position: relative;
+
+  /* ən kritik düzəliş */
+  /* transform: translateX(
+      clamp(60px,7.1875vw,115px)
+  ); */
+}
+.line-3-text {
+  position: relative;
+  z-index: 2;
+}
+/* QR */
+
+.qr {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  width: clamp(100px, calc(136 / 1600 * 100vw), 136px);
+  height: auto;
+  top: -25px;
+    left: -130px;
+
+  top: calc(-25px + (1px * (1 - (100vw / 1600px))));
+  left: clamp(-120px, calc(-120px + 30px * ((1600px - 100vw) / 400px)), -90px);
+
+}
+
+.qr-wrapper {
+  /* width: clamp(72px,calc(136/1600*100vw),136px);
+   height:  clamp(98px,calc(136/1600*100vw),184px); */
+
+  position: absolute;
+  z-index: 3;
+  left: clamp(-145px, calc(145 / 1600 * 100vw), -80px);
+  top: clamp(-35px, calc(35 / 1600 * 100vw), -20px);
+  top: clamp(-35px, calc(-35px + (15 * (100vw / 1600))), -20px);
+  left: clamp(-145px, calc(-145px + (65 * (100vw / 1600))), -80px);
+  top: calc(-20px - (5 * ((100vw - 400px) / 1200)));
+  left: calc(-80px - (25 * ((100vw - 400px) / 1200)));
+  left: -92px;
+  top: -15px;
+
+  background: #ffc55c;
+
+  padding: clamp(2px, calc(4 / 1600 * 100vw), 4px)
+    clamp(2px, calc(4 / 1600 * 100vw), 4px)
+    clamp(6px, calc(12 / 1600 * 100vw), 12px)
+    clamp(2px, calc(4 / 1600 * 100vw), 4px);
+  border-radius: 12px;
+  transform: rotate(15deg);
+}
+.qr-icon-wrapper {
+  background: #fff;
+  border-radius: 12px 12px 4px 4px;
+}
+.qr-img {
+  /* width: 110px; */
+  transform: rotate(-15deg);
+  width: clamp(60px, 5vw, 84px);
+  height: auto;
+}
+
+.qr-text {
+  font-family: "Switzer", sans-serif;
+  font-size: clamp(4px, calc(14 / 1600 * 100vw), 14px);
+  line-height: calc(16 / 14);
+  font-weight: 500;
+  text-transform: none;
+
+  color: #191919;
+  text-align: center;
+  /* padding: 0 4px 0 4px; */
+  padding-top: clamp(4px, calc(8 / 1600 * 100vw), 8px);
+}
+
+/* -----------------------------
+    RIGHT SIDE
+------------------------------*/
+
+.hero-right {
+   max-width: 344px;
+;
+  text-align: left;
+}
+
+.hero-desc {
+  font-size: 16px;
+  opacity: 0.9;
+  margin-bottom: 56px;
+}
+
+/* -----------------------------
+    STORE BUTTONS
+------------------------------*/
+
+/* -----------------------------
+    SCROLL INDICATOR
+------------------------------*/
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  text-align: center;
+  z-index: 3;
+  opacity: 0.8;
+}
+
+.scroll-indicator img {
+  width: 25px;
+}
+
+.scroll-indicator p {
+  font-size: 14px;
+  margin-top: 5px;
+}

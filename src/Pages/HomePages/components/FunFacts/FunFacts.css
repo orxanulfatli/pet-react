@@ -1,0 +1,195 @@
+.fun-facts {
+  position: relative;
+  min-height: 100vh;
+  background: #ca1032;
+  color: #f7f7f7;
+  display: flex;
+  align-items: center;
+  padding: clamp(80px, 15vh, 160px) clamp(20px, 5vw, 40px);
+  padding: 160px 40px;
+  overflow: hidden;
+}
+
+.fun-facts__content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: clamp(20px, 4vw, 60px);
+  align-items: start;
+}
+
+.fun-facts__left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  /* padding-top: 25px; */
+
+  /* Typhography */
+  color: #fff;
+  font-family: "HeadingNow-73Book", sans-serif;
+  font-size: 18px;
+  font-size: clamp(14px, calc(18 / 1600 * 100vw), 18px);
+  font-style: normal;
+  font-weight: 300;
+  line-height: calc(24 / 18); /* 133.333% */
+  letter-spacing: calc(-0.4 / 1600 * 100vw);
+  text-transform: uppercase;
+  max-width: 240px;
+  text-wrap: balance;
+  text-align: start;
+}
+
+.fun-facts__center {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.fun-facts__title {
+  position: relative;
+  z-index: 1;
+  color: #000;
+  font-family: "HeadingNowTrial", sans-serif;
+  font-size: clamp(170px, calc(30vw - 176px), 304px);
+  font-size: clamp(170px,calc(304 / 1600 * 100vw) ,304px);
+    font-size: clamp(170px, calc(25vw - 96px), 304px);
+
+  font-style: normal;
+  font-weight: 800;
+  line-height: calc(256 / 304); /* 84.211% */
+  text-transform: uppercase;
+  text-align: start;
+}
+
+.fun-facts__title span {
+  display: block;
+}
+
+.fun-facts__floaters {
+  position: absolute;
+  inset: 0;
+  z-index: 2; /* above title so badges sit on top */
+  pointer-events: none;
+}
+
+.fun-facts__badge {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  /* box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18); */
+  animation-name: fun-facts-float;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+  top: var(--start-y, 100%);
+}
+
+.fun-facts__badge img {
+    background: transparent;
+
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.18)); */
+}
+
+.fun-facts__floaters.is-active .fun-facts__badge {
+  animation-play-state: running;
+}
+
+@keyframes fun-facts-float {
+  0% {
+    opacity: 0;
+    top: var(--start-y, 100%);
+  }
+  10% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: var(--end-y, -10px);
+  }
+}
+
+.fun-facts__store {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  color: #fbe9ec;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  padding-top:clamp(0px, 2vw, 20px);
+  align-self: flex-start;
+}
+
+.fun-facts__desc {
+  max-width: 220px;
+ 
+  color: rgba(255, 255, 255, 0.60);
+  font-family: "HeadingNow-73Book", sans-serif;
+font-size: 16px;
+font-size: clamp(12px, calc(16 / 1600 * 100vw), 16px);
+font-style: normal;
+font-weight: 300;
+line-height: calc(24 / 16); /* 150% */
+text-transform: uppercase;
+}
+
+.fun-facts__actions {
+  /* background: rgba(0, 0, 0, 0.15); */
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  /* padding: 12px; */
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+}
+
+/* Responsive */
+@media (max-width: 1080px) {
+  .fun-facts__content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    text-align: center;
+  }
+
+  .fun-facts__left,
+  .fun-facts__right {
+    /* align-items: center;
+    text-align: center;
+    justify-content: center; */
+  }
+
+  .fun-facts__desc {
+    max-width: none;
+  }
+
+  .fun-facts__actions {
+    /* width: 100%;
+    display: flex;
+    justify-content: center; */
+  }
+}
+
+@media (max-width: 640px) {
+  .fun-facts {
+    padding: 28px 18px 42px;
+  }
+
+  .fun-facts__title {
+    font-size: clamp(46px, 12vw, 80px);
+  }
+
+  .fun-facts__badge {
+    width: 64px !important;
+    height: 64px !important;
+  }
+}
