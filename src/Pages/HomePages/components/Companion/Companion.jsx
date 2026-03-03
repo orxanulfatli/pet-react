@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import "./Companion.css";
 import FeatureCard from "./FeatureCard/FeatureCard";
-import brandLabel from '../../../../../src/assets/icons/companion/dosty.svg'
+import brandLabel from "../../../../assets/icons/companion/dosty.svg";
 import CircularText from "./CircularText/CircularText";
-import yellowIcon from '../../../../../src/assets/icons/header-logo.svg'
-// import profile from '../../../../../src/assets/icons/companion/'
+import yellowIcon from "../../../../assets/icons/header-logo.svg";
+import profileImg from "../../../../assets/icons/companion/profile.png";
+import aiImg from "../../../../assets/icons/companion/ai.png";
+import weightImg from "../../../../assets/icons/companion/weight.png";
+import symptonImg from "../../../../assets/icons/companion/sympton.png";
 
 const Companion = () => {
   const [activeCard, setActiveCard] = useState(0);
 
   const images = [
-    "../../../../../src/assets/icons/companion/profile.png",
-    "../../../../../src/assets/icons/companion/ai.png",
-    "../../../../../src/assets/icons/companion/weight.png",
-    "../../../../../src/assets/icons/companion/sympton.png",
+    profileImg,
+    aiImg,
+    weightImg,
+    symptonImg,
   ];
 
   const cards = [
