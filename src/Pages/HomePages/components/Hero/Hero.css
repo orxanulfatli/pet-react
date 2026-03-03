@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  /* overflow: hidden; */
   color: white;
   font-family: sans-serif;
 }
@@ -53,25 +53,60 @@
 }
 
 .hero-logo {
+  position: relative;
+  display: inline-block;
   width: clamp(32px, 5.625vw, 90px);
   height: clamp(32px, 5.625vw, 90px);
+width: 111px;
+height: 116px;
+margin-top: 10px;
+aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.hero-logo-bg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.hero-logo-animal {
+  position: absolute;
+  inset: 0;
+  width: 70%;
+  height: 70%;
+  margin: auto;
+  object-fit: contain;
+  animation: hero-pet-sway 3.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes hero-pet-sway {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .hero-title {
   position: relative;
-  color: #fff;
-  font-family: "Oswald", sans-serif;
 
-  /* font-size: clamp(54px,9.75vw,156px); */ /*font-family headingnow tapsan bu font size qoy*/
-  font-size: clamp(54px, 6.5625vw, 105px);
-
-  font-style: normal;
-  font-weight: 800;
-  line-height: 0.88;
-  text-transform: uppercase;
+  color: #FFF;
+font-family: "HeadingNowTrial", sans-serif;
+font-size: clamp(80px,calc(156 / 1600 * 100vw),156px);
+font-style: normal;
+font-weight: 800;
+line-height: calc(132 / 156); /* 84.615% */
+text-transform: uppercase;
 }
 .line-text {
-  margin-left: clamp(20px, 1.5625vw, 25px);
+  /* margin-left: clamp(20px, 1.5625vw, 25px); */
 }
 .line {
   margin-bottom: 5px;
@@ -80,6 +115,7 @@
   display: flex;
   justify-content: stretch;
   align-items: stretch;
+  gap: 14px;
 }
 
 .line-2 {
@@ -112,7 +148,8 @@
   margin-left: clamp(60px, 7.1875vw, 115px); /*qr olmuyanda bunu gotur*/
 
   margin-left: clamp(75px, 8.75vw, 140px);
-  margin-left: clamp(125px, 16.4375vw, 263px);
+  margin-left: clamp(125px, 16.4375vw, 230px);
+  margin-left: clamp(150px,calc(230 / 1600 * 100vw),230px);
 
   position: relative;
 
@@ -127,7 +164,7 @@
 }
 /* QR */
 
-.qr {
+/* .qr {
   position: absolute;
   z-index: 3;
   display: block;
@@ -139,55 +176,11 @@
   top: calc(-25px + (1px * (1 - (100vw / 1600px))));
   left: clamp(-120px, calc(-120px + 30px * ((1600px - 100vw) / 400px)), -90px);
 
-}
+} */
 
-.qr-wrapper {
-  /* width: clamp(72px,calc(136/1600*100vw),136px);
-   height:  clamp(98px,calc(136/1600*100vw),184px); */
 
-  position: absolute;
-  z-index: 3;
-  left: clamp(-145px, calc(145 / 1600 * 100vw), -80px);
-  top: clamp(-35px, calc(35 / 1600 * 100vw), -20px);
-  top: clamp(-35px, calc(-35px + (15 * (100vw / 1600))), -20px);
-  left: clamp(-145px, calc(-145px + (65 * (100vw / 1600))), -80px);
-  top: calc(-20px - (5 * ((100vw - 400px) / 1200)));
-  left: calc(-80px - (25 * ((100vw - 400px) / 1200)));
-  left: -92px;
-  top: -15px;
 
-  background: #ffc55c;
 
-  padding: clamp(2px, calc(4 / 1600 * 100vw), 4px)
-    clamp(2px, calc(4 / 1600 * 100vw), 4px)
-    clamp(6px, calc(12 / 1600 * 100vw), 12px)
-    clamp(2px, calc(4 / 1600 * 100vw), 4px);
-  border-radius: 12px;
-  transform: rotate(15deg);
-}
-.qr-icon-wrapper {
-  background: #fff;
-  border-radius: 12px 12px 4px 4px;
-}
-.qr-img {
-  /* width: 110px; */
-  transform: rotate(-15deg);
-  width: clamp(60px, 5vw, 84px);
-  height: auto;
-}
-
-.qr-text {
-  font-family: "Switzer", sans-serif;
-  font-size: clamp(4px, calc(14 / 1600 * 100vw), 14px);
-  line-height: calc(16 / 14);
-  font-weight: 500;
-  text-transform: none;
-
-  color: #191919;
-  text-align: center;
-  /* padding: 0 4px 0 4px; */
-  padding-top: clamp(4px, calc(8 / 1600 * 100vw), 8px);
-}
 
 /* -----------------------------
     RIGHT SIDE

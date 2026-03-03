@@ -160,7 +160,11 @@ text-transform: uppercase;
   /* justify-content: center; */
   /* align-items: center; */
 }
+@media (max-height: 750px) and (max-width: 1600px) and (min-width: 1500px) {
+   .phone-wrapper{
+    height: clamp(400px, calc(720 / 742 * 100vh), 700px);}     
 
+}
 .phone {
   width: 100%;
   height: auto;

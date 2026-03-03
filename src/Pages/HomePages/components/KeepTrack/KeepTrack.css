@@ -25,11 +25,13 @@ justify-content: center;  overflow: hidden;
   gap: 15px;
 
   color: #191919;
-  font-family: "Oswald", sans-serif;
-  font-size: clamp(100px, calc(200 / 1600 * 100vw), 200px);
+  /* font-family: "Oswald", sans-serif;
+  font-size: clamp(100px, calc(200 / 1600 * 100vw), 200px); */
+font-family: "HeadingNowTrial", sans-serif;
+font-size: clamp(150px, calc(35vw - 256px), 304px);
 
   font-style: normal;
-  font-weight: 700;
+  font-weight: 800;
   line-height: calc(256 / 304); /* 84.211% bu faiz lineheight/fontsize*100% */
   text-transform: uppercase;
   white-space: nowrap;
@@ -63,4 +65,10 @@ justify-content: center;  overflow: hidden;
   text-align: left;
   margin-left: 188px;
   margin-top: 48px;
+}
+
+@media(max-height:800px) {
+  .keep-track-scroll {
+    margin-top: 180px;
+  }
 }

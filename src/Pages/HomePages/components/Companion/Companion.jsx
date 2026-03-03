@@ -85,7 +85,7 @@ const Companion = () => {
                 />
               </svg>
             }
-            animateCenter={false}
+            animateCenter={true}
           />
           {/* <img
             src="/img/circular-badge.png"

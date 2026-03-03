@@ -55,14 +55,17 @@ line-height: normal;
 }
 
 .spin {
-  animation: spin 14s linear infinite;
+  animation: spin-cycle 8s linear infinite;
 }
 
-@keyframes spin {
-  from {
+@keyframes spin-cycle {
+  0% {
     transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  85% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(-90deg);
   }
 }

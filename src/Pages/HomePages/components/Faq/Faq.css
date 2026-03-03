@@ -1,0 +1,285 @@
+.faq {
+  position: relative;
+  overflow: hidden;
+  /* background: radial-gradient(circle at 10% 10%, #1f1f1f 0%, #0f0f0f 42%),
+    linear-gradient(145deg, #0f0f0f 0%, #0b0b0b 100%); */
+background: #191919;
+  color:#FFFFFF;
+  /* padding: clamp(80px, 10vw, 160px) clamp(20px, 6vw, 120px); */
+  padding: 60px 168px 160px 168px;
+}
+
+.faq::after {
+  content: "";
+  position: absolute;
+  inset: auto auto -120px 40%;
+  width: 520px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(99, 255, 166, 0.08), transparent 60%);
+  filter: blur(6px);
+  pointer-events: none;
+}
+
+.faq__inner {
+  /* max-width: 1160px;
+  margin: 0 auto; */
+  display: flex;
+  flex-direction: column;
+  /* gap: clamp(28px, 6vw, 42px); */
+  gap: 56px;
+}
+
+.faq__header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq__badge {
+  font-family: "HeadingNow-74Regular", sans-serif;
+
+  color: #FFF;
+font-size: clamp(14px, calc(18 / 1600 * 100vw), 18px);
+font-style: normal;
+font-weight: 400;
+line-height: calc(24 / 18); /* 133.333% */
+letter-spacing: -0.4px;
+text-transform: uppercase;
+align-self: stretch;
+}
+
+.faq__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-self: stretch;
+  font-family: "HeadingNowTrial", sans-serif;
+
+  color: #FFF;
+font-size: clamp(120px,calc(208 / 1600 * 100vw),208px);
+font-style: normal;
+font-weight: 800;
+line-height: calc(184 / 208); /* 88.462% */
+text-transform: uppercase;
+}
+
+/* .faq__lede {
+  max-width: 620px;
+  color: rgba(245, 245, 245, 0.78);
+  font-family: "HeadingNow-73Book", sans-serif;
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.6;
+} */
+
+.faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq__item {
+  position: relative;
+  border-radius: 16px;
+  border: 1px solid #242424;
+  background: linear-gradient(145deg, #1b1b1b, #141414);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+.faq__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 14px;
+  bottom: 14px;
+  width: 4px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(94, 255, 140, 0.8), rgba(57, 205, 255, 0.4));
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.faq__item:hover {
+  background: #2A2A2A;
+}
+
+.faq__trigger {
+  width: 100%;
+  padding: clamp(18px, 2vw, 22px) clamp(18px, 2.4vw, 26px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq__question {
+  font-family: "HeadingNowTrial", sans-serif;
+  color: #FFF;
+font-size: clamp(20px ,calc(44 / 1600 * 100vw),44px);
+font-style: normal;
+font-weight: 700;
+line-height: 1; /* 100% */
+text-transform: uppercase;
+}
+
+.faq__hint {
+  font-family: "HeadingNow-73Book", sans-serif;
+  color: rgba(245, 245, 245, 0.68);
+  font-size: clamp(14px, 1.8vw, 16px);
+}
+
+.faq__icon {
+  position: relative;
+  width: clamp(42px, 4vw, 48px);
+  height: clamp(42px, 4vw, 48px);
+  border-radius: 12px;
+  border: 1px solid #2c2c2c;
+  background: linear-gradient(140deg, #202020, #181818);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    transition: background 260ms ease, border-color 260ms ease, transform 260ms ease;
+
+}
+
+.faq__item:hover .faq__icon {
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.faq__icon::before,
+.faq__icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 16px;
+  height: 2px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  transition: transform 320ms ease, opacity 260ms ease, background 260ms ease;
+}
+
+.faq__icon::after {
+  transform: rotate(90deg);
+}
+
+.faq__panel {
+  /* display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  padding: 0 clamp(18px, 2.4vw, 26px);
+  transition: grid-template-rows 1100ms ease 320ms, opacity 1050ms ease 300ms, padding 1050ms ease 300ms; */
+    height: 0px;
+  overflow: hidden;
+  padding: 0 clamp(18px, 2.4vw, 26px);
+  opacity: 0;
+  transform: translateY(-6px);
+  will-change: height, opacity, transform;
+}
+
+.faq__panel-inner {
+  min-height: 0;
+  overflow: hidden;
+    padding: 0 0 clamp(14px, 2vw, 18px);
+
+}
+
+.faq__answer {
+  padding: 0 0 clamp(16px, 2vw, 20px);
+  font-family: "HeadingNow-73Book", sans-serif;
+  font-size: clamp(15px, 1.35vw, 17px);
+  color: rgba(255, 255, 255, 0.50);
+/* font-size: 16px; */
+font-style: normal;
+font-weight: 300;
+line-height: calc(24 / 16); /* 150% */
+letter-spacing: -0.4px;
+}
+
+.faq__item.is-open {
+  border-color: #2f3b2f;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32), 0 0 0 1px rgba(117, 255, 178, 0.05);
+  background: #2A2A2A;
+  /* animation: faq-pop 1100ms cubic-bezier(0.2, 0.95, 0.25, 1); */
+}
+
+.faq__item.is-open::before {
+  opacity: 1;
+}
+
+.faq__item.is-open .faq__icon {
+  transform: scale(0.98);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.faq__item.is-open .faq__icon::after {
+  transform: rotate(45deg);
+  opacity: 1;
+}
+
+.faq__item.is-open .faq__icon::before {
+  transform: rotate(-45deg);
+}
+
+.faq__item.is-open .faq__panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding: 0 clamp(18px, 2.4vw, 26px) clamp(14px, 2vw, 18px);
+}
+
+@keyframes faq-pop {
+  0% {
+    transform: scale(0.96);
+  }
+  32% {
+    transform: scale(0.96);
+  }
+  60% {
+    transform: scale(1.04);
+  }
+  85% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 900px) {
+  .faq {
+    padding: clamp(64px, 12vw, 92px) clamp(16px, 5vw, 22px);
+  }
+
+  .faq__title {
+    font-size: clamp(44px, 14vw, 74px);
+  }
+
+  .faq__trigger {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq__hint {
+    font-size: 14px;
+  }
+
+  .faq__answer {
+    font-size: 14px;
+  }
+}

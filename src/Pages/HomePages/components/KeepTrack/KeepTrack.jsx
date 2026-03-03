@@ -5,10 +5,10 @@ import dog from "../../../../../src/assets/icons/keeptrack/dog.png";
 import whitePet from "../../../../../src/assets/icons/keeptrack/whitepet.png";
 import { useRef } from "react";
 import { useEffect } from "react";
-import QrCode from "./QrCode/QrCode";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Lenis from '@studio-freight/lenis'
+import QrCode from "../QrCode/QrCode";
 
 
 
@@ -150,7 +150,7 @@ const KeepTrack = () => {
       {/* keeptrack-sticky need for horizantal scroll */}
 
       <div className="keeptrack-sticky">
-        <QrCode />
+        {/* <QrCode /> */}
 
         <div className="keep-track-scroll" ref={trackRef}>
           <div>Keep track of</div>

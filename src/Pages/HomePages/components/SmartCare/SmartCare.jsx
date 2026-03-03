@@ -38,6 +38,11 @@ const SmartCare = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const cards = gsap.utils.toArray(".care-card");
+    if (!cards.length) return;
+
+    // initial state: only first card visible
+    gsap.set(cards, { opacity: 0, yPercent: 120 });
+    gsap.set(cards[0], { opacity: 1, yPercent: 0 });
 
     const totalDuration = window.innerHeight * 3;
 
@@ -51,6 +56,7 @@ const SmartCare = () => {
       onUpdate: (self) => {
         const p = self.progress; // 0..1
         const len = cards.length || 1;
+        const activeIndex = Math.min(Math.floor(p * len), len - 1);
 
         cards.forEach((card, i) => {
           const segStart = i / len;
@@ -61,7 +67,17 @@ const SmartCare = () => {
               : Math.min(Math.max((p - segStart) / (segEnd - segStart), 0), 1);
 
           const yValue = i === 0 ? 0 : 100 - local * 100;
-          gsap.set(card, { y: `${yValue}%` });
+          const gapBase = 60;
+          const gapScale = Math.min(Math.max(window.innerHeight / 900, 0.6), 1); // reduce gap on shorter viewports
+          const yOffsetPx = i === 0 ? 0 : gapBase * gapScale * (1 - local);
+          const opacity = i === 0 ? 1 : Math.min(Math.max(local * 1.25, 0), 1);
+          const zIndex = i === activeIndex ? 1002 : 1000;
+          gsap.set(card, {
+            yPercent: yValue,
+            y: yOffsetPx,
+            opacity,
+            zIndex,
+          });
         });
       },
     });
@@ -77,7 +93,6 @@ const SmartCare = () => {
 
   return (
     <section className="smart-care">
-      <div className="smart-care-content">
         <div className="smart-care-scroll-area">
           <div className="smart-care-sticky">
             <div className="smart-care-hero">
@@ -112,7 +127,8 @@ const SmartCare = () => {
             </div>
           </div>
         </div>
-      </div>
+
+
     </section>
   );
 };

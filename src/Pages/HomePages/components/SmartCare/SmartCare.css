@@ -1,9 +1,8 @@
 .smart-care {
   background-color: #191919;
   width: 100%;
-  /* height: 100vh; */
   background-color: #191919;
-  padding: 80px 0;
+  padding: 0;
   position: relative;
   overflow: hidden;
 }
@@ -16,16 +15,18 @@
 }
 
 /* Small top tag */
+
 .smart-care-tag {
   color: #c6c6c6;
   font-size: 12px;
   letter-spacing: 1px;
   text-align: center;
-  margin-bottom: 20px;
+  align-self: center;
 }
 
 /* Main Title */
 .smart-care-title {
+  position: relative;
   text-align: center;
   color: white;
   position: relative;
@@ -40,26 +41,39 @@
 
 /* HEALTH badge */
 .title-middle {
-  position: relative;
   display: inline-block;
 }
 
 .health-badge {
   position: absolute;
-  top: 18px;
-  right: -60px;
-  background: #4a9bff;
-  color: white;
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 14px;
-  transform: rotate(-10deg);
+  top: 40%;
+  left: 40%;
+
+  color: #FFF;
+font-family: "HeadingNowTrial", sans-serif;
+font-size: clamp(30px,calc(56 / 1600 * 100vw),56px);
+font-style: normal;
+font-weight: 800;
+line-height: calc(48 / 56); /* 85.714% */
+text-transform: uppercase;
+
+border-radius: 104px;
+background: rgba(36, 119, 221, 0.90);
+backdrop-filter: blur(4px);
+
+display: flex;
+transform: rotate(-15deg);
+padding: 25px 36px 29px 36px;
+justify-content: center;
+align-items: center;
+gap: 8px;
 }
 
 /* Cards column */
 /* scroll area – uzun div + sticky container */
 .smart-care-scroll-area {
  position: relative;
+ padding: 0;
   height: calc(100vh + 100px); /* pin-spacer scroll uzunluğunu verir */
 }
 
@@ -88,15 +102,16 @@
   justify-content: space-between;
   gap: clamp(24px, 4vw, 64px);
   height: 100%;
+  padding: 160px 70px;
 }
 
 .smart-care-text {
-  flex: 1 1 55%;
+  /* flex: 1 1 55%; */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: clamp(12px, 2vw, 24px);
+  /* gap: clamp(12px, 2vw, 24px); */
 }
 
 .smart-care-title {
@@ -118,19 +133,14 @@
 
 }
 
-.smart-care-tag {
-  color: #c6c6c6;
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-align: left;
-  margin-bottom: 8px;
-}
+
 
 /* kartların ümumi stili */
 
 /* Kartların overlay olması üçün */
 .cards-wrapper {
   position: relative;
-  flex: 1 1 45%;
+  /* flex: 1 1 45%; */
   height: 100%;
+  padding: 90px;
 }

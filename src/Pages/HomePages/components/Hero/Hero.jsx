@@ -7,11 +7,13 @@ import android from "../../../../../src/assets/icons/android.png";
 import StoreButtons from "./StoreButtons";
 import Header from "../../../../shared/Header/Header";
 import qr from "../../../../../src/assets/icons/hero/qr1.png";
+import animalsIcon from "../../../../../src/assets/icons/hero/Animals.png";
+import greenPet from "../../../../../src/assets/icons/hero/greeenPet.png";
 
 
 
 
-export default function Hero() {
+export default function Hero({ qrElement = null }) {
   //data-scroll-section lokomotiv scrol-a aiddir
   return (
     <div className="hero">
@@ -24,17 +26,25 @@ export default function Hero() {
       {/* <div className="hero-overlay"></div> */}
 
       <Header />
+      {qrElement}
       {/* Content */}
       <div className="hero-content">
         {/* Left */}
         <div className="hero-left">
           <div className="hero-title">
             <div className=" line line-1">
-              <img
-                src="../../../../../src/assets/icons/hero/greeenPet.png"
-                className="hero-logo"
-                alt="Logo"
-              />
+              <div className="hero-logo">
+                <img
+                  src={greenPet}
+                  className="hero-logo-bg"
+                  alt="Logo background"
+                />
+                <img
+                  src={animalsIcon}
+                  className="hero-logo-animal"
+                  alt="Pet icon"
+                />
+              </div>
               <div className="line-text">everything</div>
             </div>
 
@@ -46,19 +56,12 @@ export default function Hero() {
               </div>
             </div>
             <div className="line-3">
-              {/* <div className="qr-wrapper">
-                <div className="qr-icon-wrapper">
-                  <img src={qr} className="qr-img" alt="#" />
-                </div>
-
-                <p className="qr-text">
-                  Scan to Download
-                  <br /> NOW Dosty App
-                </p>
-              </div> */}
-              <div className="qr">
+          
+              {/* <div className="qr">
                 <img src={qr} alt="#" />
-              </div>
+              </div> */}
+
+              {/* <QrCode/> */}
               <div className=" line line-3-text"> needs</div>
             </div>
           </div>

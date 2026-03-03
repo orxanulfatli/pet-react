@@ -62,7 +62,11 @@
   text-transform: uppercase;
   text-align: start;
 }
-
+@media (max-height: 880px) and (max-width: 1600px) and (min-width: 1500px){
+  .fun-facts__title {
+    font-size: clamp(150px,calc(254 / 880 * 100vh),254px);
+  }
+}
 .fun-facts__title span {
   display: block;
 }
@@ -147,7 +151,7 @@ text-transform: uppercase;
 
 .fun-facts__actions {
   /* background: rgba(0, 0, 0, 0.15); */
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  /* border: 1px solid rgba(255, 255, 255, 0.14); */
   /* padding: 12px; */
   border-radius: 14px;
   backdrop-filter: blur(6px);

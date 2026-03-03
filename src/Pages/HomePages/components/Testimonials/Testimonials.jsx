@@ -64,28 +64,84 @@ const Testimonials = () => {
       pin: true,
       scrub: true,
       anticipatePin: 1,
-      onUpdate: (self) => {
-        const p = self.progress; // 0..1
-        const len = cards.length || 1;
 
-        cards.forEach((card, i) => {
-          const segStart = i / len;
-          const segEnd = (i + 1) / len;
-          const local =
-            segEnd === segStart
-              ? 0
-              : Math.min(Math.max((p - segStart) / (segEnd - segStart), 0), 1);
+onUpdate: (self) => {
+  const p = self.progress; // 0..1
+  const len = cards.length || 1;
 
-          const base = i === 0 ? 0 : 120;
-          const yValue = i === 0 ? 0 : base - local * base;
-          gsap.set(card, { yPercent: yValue });
-        });
-      },
+  cards.forEach((card, i) => {
+    const segStart = i / len;
+    const segEnd = (i + 1) / len;
+
+    let y = 120;
+    let scale = 0.92;
+    let opacity = 1;
+
+    // === SƏNİN KÖHNƏ LOGIC (1-ci kartın davranışına toxunmuruq) ===
+    if (p < segStart) {
+      y = 120;
+      scale = 0.92;
+      opacity = 1;
+    } else if (p >= segStart && p <= segEnd) {
+      const local = (p - segStart) / (segEnd - segStart);
+
+      y = 120 * (1 - local);
+
+      if (local < 0.5) {
+        scale = gsap.utils.interpolate(0.92, 1, local * 2);
+        opacity = 1;
+      } else {
+        scale = gsap.utils.interpolate(1, 0.95, (local - 0.5) * 2);
+        opacity = gsap.utils.interpolate(1, 0.5, (local - 0.5) * 2);
+      }
+    } else {
+      y = 0;
+      scale = 0.95;
+      opacity = 0.5;
+    }
+
+    // === YENİ QAYDA: 2-ci və sonrakı kartlar HƏMİŞƏ opacity:1
+    // yalnız növbəti kart gələndə solsunlar ===
+    if (i > 0) {
+      opacity = 1; // kart gələndə də, oturanda da 1
+
+      // bu kartın üstünə gələn "növbəti kart" var?
+      if (i < len - 1) {
+        const nextStart = (i + 1) / len;
+        const nextEnd = (i + 2) / len;
+
+        // növbəti kartın segmentinə girəndə bu kart solmağa başlayır
+        const nextLocal = gsap.utils.clamp(
+          0,
+          1,
+          (p - nextStart) / (nextEnd - nextStart)
+        );
+
+        if (p >= nextStart) {
+          opacity = gsap.utils.interpolate(1, 0.5, nextLocal);
+        }
+      }
+    }
+
+    gsap.set(card, {
+      yPercent: y,
+      scale,
+      opacity,
+      // ❗ kartların bir-birini örtməsi üçün zIndex belə olmalıdır
+      zIndex: 1000 + i,
+      transformOrigin: "center center",
+    });
+  });
+},
+
+
     });
 
     trigger && trigger.refresh();
+    stackEl.classList.add("is-gsap-ready");
 
     return () => {
+      stackEl.classList.remove("is-gsap-ready");
       trigger && trigger.kill();
     };
   }, []);

@@ -57,17 +57,73 @@
   text-align: left;
 }
 
-.stat-number span {
- 
+.number-suffix {
   color: #191919;
-font-family: "Oswald", sans-serif;
-font-size: 24px;
-font-style: normal;
-font-weight: 800;
-line-height: 28px; /* 116.667% */
-text-transform: uppercase;
-    padding-top: 5px;
-    margin-left: -15px;
+  font-family: "Oswald", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 28px; /* 116.667% */
+  text-transform: uppercase;
+  padding-top: 5px;
+  margin-left: -15px;
+}
+
+.number {
+  position: relative;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.digit {
+  position: relative;
+  display: inline-block;
+  height: 1em;
+  overflow: hidden;
+}
+
+.digit-ghost,
+.digit-live {
+  display: inline-block;
+}
+
+.digit-ghost {
+  opacity: 0.06;
+  transform: translateY(0);
+  transition: transform 300ms ease, opacity 300ms ease;
+  transition-delay: var(--digit-delay);
+}
+
+.digit-live {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(120%);
+  transition: transform 600ms ease, opacity 600ms ease;
+  transition-delay: var(--digit-delay);
+}
+
+.digit.is-visible .digit-live {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.digit.is-visible .digit-ghost {
+  opacity: 0;
+  transform: translateY(-120%);
+}
+
+.number-suffix {
+  opacity: 0;
+  transform: translateY(120%);
+  transition: transform 600ms ease, opacity 600ms ease;
+  transition-delay: var(--suffix-delay);
+}
+
+.number-suffix.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .stat-right {

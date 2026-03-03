@@ -21,7 +21,7 @@ const AiAssistant = () => {
             {/* Title */}
             <h2 className="ai-assistant__title">
               <span className="ai-assistant__title-line">
-                LET&apos;S TALk OUR
+                LET&apos;S <span className="title-gradient">Tal</span>k OUR
               </span>
 
               <div className="ai-assistant__headline">
@@ -70,16 +70,18 @@ const AiAssistant = () => {
               readOnly
             />
             <div className="ai-assistant__input-actions">
-              <button className="icon-btn icon-btn--ghost" aria-label="Add">
-                
-              </button>
+              <button
+                className="icon-btn icon-btn--ghost"
+                aria-label="Add"
+              ></button>
               <div className="pill">
                 <span className="pill__avatar" aria-hidden="true"></span>
                 <span className="pill__label">Dosty AI</span>
               </div>
-              <button className="icon-btn icon-btn--dark" aria-label="Send">
-                
-              </button>
+              <button
+                className="icon-btn icon-btn--dark"
+                aria-label="Send"
+              ></button>
             </div>
           </div>{" "}
         </div>
