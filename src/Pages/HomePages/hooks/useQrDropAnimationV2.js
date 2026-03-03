@@ -5,6 +5,7 @@ const useQrDropAnimationV2 = () => {
   const variantRef = useRef("yellow");
   const textRef = useRef(false);
   const isPinnedRef = useRef(false);
+  const isFixedPinnedRef = useRef(false);
   const pinnedViewportRef = useRef({ left: 0, top: 0, rotate: -15 });
   const pinnedDocRef = useRef({ left: 0, top: 0, rotate: -15 });
   const [qrVariant, setQrVariant] = useState("yellow");
@@ -27,15 +28,24 @@ const useQrDropAnimationV2 = () => {
       height: initialRect.height,
     };
 
+    const setAbsoluteMode = () => {
+      if (!isFixedPinnedRef.current) return;
+      qrEl.style.position = "";
+      qrEl.style.left = "";
+      qrEl.style.top = "";
+      isFixedPinnedRef.current = false;
+    };
+
+    const setFixedMode = (left, top, rotate) => {
+      qrEl.style.position = "fixed";
+      qrEl.style.left = `${left}px`;
+      qrEl.style.top = `${top}px`;
+      qrEl.style.transform = `translate3d(0px, 0px, 0px) rotate(${rotate}deg)`;
+      isFixedPinnedRef.current = true;
+    };
+
     const update = () => {
       const scrollY = window.scrollY;
-      const liveRect = qrEl.getBoundingClientRect();
-      const live = {
-        left: liveRect.left + window.scrollX,
-        top: liveRect.top + window.scrollY,
-        width: liveRect.width,
-        height: liveRect.height,
-      };
       // Trigger before KeepTrack starts (~40% viewport ahead)
       const keepStart = keepTrackEl.offsetTop - window.innerHeight * 0.4;
       const keepEnd =
@@ -54,14 +64,14 @@ const useQrDropAnimationV2 = () => {
       let transform = `translate3d(0px, ${dropY}px, 0) rotate(${baseRotation}deg)`;
 
       if (scrollY >= keepStart && scrollY <= keepEnd) {
+        setAbsoluteMode();
         const keepRect = keepTrackScroll.getBoundingClientRect();
         const targetX =
           keepRect.left +
           window.scrollX +
           keepRect.width / 2 -
-          live.width / 2;
-        const targetY =
-          keepRect.top + window.scrollY - live.height + 25;
+          base.width / 2;
+        const targetY = keepRect.top + window.scrollY - base.height + 35;
 
         const settleProgress = clamp(
           (scrollY - keepStart) / (window.innerHeight * 0.4),
@@ -86,13 +96,12 @@ const useQrDropAnimationV2 = () => {
             };
             pinnedDocRef.current = { left: 0, top: 0, rotate: -15 };
           }
-          const pinnedLeft =
-            pinnedViewportRef.current.left + window.scrollX;
-          const pinnedTop =
-            pinnedViewportRef.current.top + window.scrollY;
-          transform = `translate3d(${pinnedLeft - base.left}px, ${
-            pinnedTop - base.top
-          }px, 0) rotate(${pinnedViewportRef.current.rotate}deg)`;
+          setFixedMode(
+            pinnedViewportRef.current.left,
+            pinnedViewportRef.current.top,
+            pinnedViewportRef.current.rotate
+          );
+          return;
         } else {
           isPinnedRef.current = false;
           pinnedViewportRef.current = { left: 0, top: 0, rotate: -15 };
@@ -115,10 +124,12 @@ const useQrDropAnimationV2 = () => {
             rotate: pinnedViewportRef.current.rotate,
           };
         }
+        setAbsoluteMode();
         transform = `translate3d(${pinnedDocRef.current.left - base.left}px, ${
           pinnedDocRef.current.top - base.top
         }px, 0) rotate(${pinnedDocRef.current.rotate}deg)`;
       } else {
+        setAbsoluteMode();
         if (isPinnedRef.current) {
           isPinnedRef.current = false;
           pinnedViewportRef.current = { left: 0, top: 0, rotate: -15 };
@@ -142,6 +153,7 @@ const useQrDropAnimationV2 = () => {
     window.addEventListener("resize", update);
 
     return () => {
+      setAbsoluteMode();
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
