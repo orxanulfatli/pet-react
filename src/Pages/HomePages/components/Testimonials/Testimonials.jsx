@@ -70,6 +70,32 @@ onUpdate: (self) => {
   const len = cards.length || 1;
 
   cards.forEach((card, i) => {
+    if (i === 0) {
+      const firstEnd = 1 / len;
+      const secondEnd = 2 / len;
+      let scale = 1;
+      let opacity = 1;
+
+      if (p >= firstEnd) {
+        const fadeLocal = gsap.utils.clamp(
+          0,
+          1,
+          (p - firstEnd) / (secondEnd - firstEnd)
+        );
+        scale = gsap.utils.interpolate(1, 0.95, fadeLocal);
+        opacity = gsap.utils.interpolate(1, 0.5, fadeLocal);
+      }
+
+      gsap.set(card, {
+        yPercent: 0,
+        scale,
+        opacity,
+        zIndex: 1000,
+        transformOrigin: "center center",
+      });
+      return;
+    }
+
     const segStart = i / len;
     const segEnd = (i + 1) / len;
 
